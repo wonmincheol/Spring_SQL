@@ -12,8 +12,7 @@ public class IndexController {
 	public String index() {
 		/*
 		 * log.info();
-		 */		
-		
+		 */
 		return "index";
 	}
 }
