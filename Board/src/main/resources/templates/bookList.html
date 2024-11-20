@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http:/www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>-- 도서목록 조회 (Board) --</title>
@@ -21,7 +21,7 @@
 		</tr>
 		<tr th:each = "board:${bookList}">
 			<td>
-				<span th:text = "${board.bookid}"></span>
+				<a th:text = "${board.bookid}" th:href="@{/{id}(id=${board.bookid})}"></a>
 			</td>
 			<td th:text = "${board.bookname}"></td>
 			<td th:text = "${board.publisher}"></td>
