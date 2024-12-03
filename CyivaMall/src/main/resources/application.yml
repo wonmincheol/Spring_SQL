@@ -1,0 +1,17 @@
+#어플리케이션 포트 -> 디폴트가 8080
+server:
+  port: 8080
+
+# database 연동설정
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/cyivamall?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    #jdbc:mysql://localhost:{port번호}/{db이름}?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: 1234
+    
+# mybatis
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  config-location: classpath:mybatis-config.xml

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Item">
+	<!-- sql문이 작성되는 공간 -->
+	<!-- 상품 목록보기  -->
+	<select id="getList" resultType="item">
+		SELECT id,
+			   name,
+			   price,
+			   manufacturer
+		  FROM item
+	  ORDER BY id ASC
+	</select>
+	<!-- 상품 추가 -->
+	<insert id="save" parameterType="item">
+		INSERT INTO item(
+							name,
+							price, 
+							manufacturer, 
+							exp)
+				  VALUES(	#{name}, 
+				  			#{price}, 
+				  			#{manufacturer}, 
+				  			#{exp})
+	</insert>
+	<!-- 상품 상세 정보 가져오기 -->
+	<select id="detail" parameterType="int" resultType="item">
+		SELECT id, 
+			   name,
+			   price,
+			   manufacturer,
+			   exp
+		  FROM item
+	  	 WHERE id = #{id}
+	</select>
+	<!-- 상품 정보 삭제 -->
+	<delete id="goDelete" parameterType="int">
+		DELETE
+		  FROM item
+		 WHERE id = #{id}
+	</delete>
+	<!-- 상품 정보 수정 -->
+	<update id="goUpdate" parameterType="item">
+	
+		UPDATE 	item
+		SET 	name 			= #{name },
+				price 			= #{price},
+				manufacturer 	= #{manufacturer},
+				exp				= #{exp}
+		WHERE 	id 			= #{id}
+	
+	</update>
+	
+	<!-- 상품 검색 -->
+	<select id="searchItem" parameterType="string" resultType="item">
+	    SELECT 	id, 
+           		name,
+           		price,
+           		manufacturer,
+           		exp
+      	  FROM	item
+     	 WHERE 	name LIKE CONCAT('%', #{t}, '%') 
+        		OR manufacturer LIKE CONCAT('%', #{t}, '%')
+         ORDER  BY price ASC
+	</select>
+	
+	
+	
+</mapper>

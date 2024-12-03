@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+
+/*tag*/
+a{
+	text-decoration-line: none;
+	border: 1px solid 6892d5;
+}
+
+/*class*/
+.first-color { 
+	background: #f8fcfb; 
+}
+	
+.second-color { 
+	background: #c9fdd7; 
+}
+
+.third-color { 
+	background: #79d1c3; 
+}
+
+.fourth-color { 
+	background: #6892d5; 
+}
+
+.header-box{
+	background: #79d1c3; 
+	display: inline;
+	margin: 1px;
+}
+
+.linker{
+	
+}

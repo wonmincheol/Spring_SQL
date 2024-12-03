@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>상품 상세 내역</title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>상품 번호</th>	
+			<td th:text="${detailItem.id}"></td>
+		</tr>
+		<tr>
+			<th>상품명</th>	
+			<td th:text="${detailItem.name}"></td>
+		</tr>
+		<tr>
+			<th>가격</th>	
+			<td th:text="${detailItem.price}"></td>
+		</tr>
+		<tr>
+			<th>제조사</th>	
+			<td th:text="${detailItem.manufacturer}"></td>
+		</tr>
+		<tr>
+			<th>상품 설명</th>	
+			<td th:text="${detailItem.exp}"></td>
+		</tr>
+	</table>
+	
+	<br>
+	
+	<button onclick="goList()">목록</button>
+	<button onclick="goUpdate()">수정</button>
+	<button onclick="goDelete()">삭제</button>
+	
+	
+	
+	
+</body>
+	
+<script type="text/javascript" th:inline="javascript">
+	var id = '[[${detailItem.id}]]';
+</script>
+
+<script type="text/javascript" src="/js/default.js"></script>
+	
+		
+		
+
+	
+	
+	
+</html>
