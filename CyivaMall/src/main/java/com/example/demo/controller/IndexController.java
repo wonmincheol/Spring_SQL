@@ -14,9 +14,5 @@ public class IndexController {
 		return "index";
 	}
 	
-	@GetMapping("/admin")
-	public String admin() {
-		log.info("로그인 페이지 연결");
-		return "adminLogin";
-	}
+	
 }

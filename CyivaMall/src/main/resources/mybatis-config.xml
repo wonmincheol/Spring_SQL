@@ -8,6 +8,7 @@
 		<!-- indexController예시 -->
 		<typeAlias type="com.example.demo.controller.IndexController" alias = "IndexController"></typeAlias>
 		<typeAlias type="com.example.demo.dto.ItemDTO" alias = "item"></typeAlias>
+		<typeAlias type="com.example.demo.dto.AccountDTO" alias = "account"></typeAlias>
 	
 	</typeAliases>
 </configuration>

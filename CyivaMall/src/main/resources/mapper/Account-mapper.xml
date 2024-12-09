@@ -4,8 +4,14 @@
 <mapper namespace="Account">
 	<!-- sql문이 작성되는 공간 -->
 	
+	<!-- 계정 로그인 -->
 	<select id="getAccount" parameterType="String" resultType="account">
 		
+		SELECT 	id,
+				name,
+				password
+		  FROM	account
+		 WHERE	name = #{name} 
 	
 	</select>
 	

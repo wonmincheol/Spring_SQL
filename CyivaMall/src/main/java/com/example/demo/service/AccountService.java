@@ -19,7 +19,7 @@ public class AccountService {
 	private final AccountRepository accountRepository;
 	
 	//관리자 로그인 시도
-	public boolean tryAccountLogin(String n, String p) {
+	public AccountDTO tryAccountLogin(String n, String p) {
 		return accountRepository.tryAccountLogin(n,p);
 	}
 

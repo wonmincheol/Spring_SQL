@@ -1,22 +1,39 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>관리 목록</title>
-
+	<meta charset="UTF-8">
+	<title>Item List</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body>
-	<form action="/login" method="post" enctype="multipart/form-data">
-			관리자명 : <input type="text" name="name"><br>
-			
-			비밀번호 : <input type="text" name="price"><br>
-			
+<body class="first-color">
+	<style>
+		th{
+			font-size: 40px;
+		}
+	</style>
+	
+	<div class="second-color">
+		<div class="header-box" ><a href="/">				시작 페이지	</a></div>
+		<div class="header-box" > <a href="/addItem">			상품 추가	</a></div>
+		<div class="header-box" ><a href="/searchPage?t=''">		상품 검색	</a></div>
+	</div>
 
-			<input type="submit" value="로그인">
+	
+	<table border="1">
+		<tr>
+			<th>상품명</th>
+			<th>가격</th>
+			<th>제조사</th>
+		</tr>
+		<tr th:each = "Item:${itemList}">
+			<td>
+				<a th:text = "${Item.name}" th:href="@{/{id}(id=${Item.id})}"></a>
+			</td>
+			<td th:text = "${Item.price}"></td>
+			<td th:text = "${Item.manufacturer}"></td>
 			
-		</form>
-		<button onclick="goList()">취소</button>
-		
+		</tr>
+	</table>
 </body>
-<script type="text/javascript" src="/js/default.js"></script>
 </html>
