@@ -9,12 +9,53 @@
 		
 		SELECT 	id,
 				name,
-				password
+				password,
+				auth
 		  FROM	account
 		 WHERE	name = #{name} 
 	
 	</select>
 	
+	<select id="getPurchaseList" parameterType="int" resultType="item">
+    SELECT id,
+           name,
+           price,
+           manufacturer
+      FROM item
+     WHERE id IN (
+                  SELECT itemId
+                    FROM transaction_history
+                   WHERE userid = #{id}
+                )
+	</select>
+
+	
+    <insert id="addPurchase" parameterType="transaction_history">
+	    INSERT INTO transaction_history 
+	    								(userId, 
+	    								itemId)
+		    VALUES (
+		    		#{userId}, 
+		    		#{itemId})
+	</insert>
+	
+	<insert id="addAccount" parameterType="account">
+	    INSERT INTO account 
+	    								(name, 
+	    								password,
+	    								auth)
+		    VALUES (
+		    		#{name}, 
+		    		#{password},
+		    		#{auth})
+	</insert>
+	
+	<delete id="deleteHistory" parameterType="map">
+	    DELETE FROM transaction_history
+	     WHERE userId = #{userId}
+	       AND itemId = #{itemId}
+	</delete>
+
 	
 	
 </mapper>

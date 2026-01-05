@@ -3,11 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <title>Cyiva Mall</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	<a href="/list">상품목록</a>
-	<a href="/login">관리자 로그인</a>
+	<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
+	  <img src="/images/title.png" alt="Title Image" style="max-width: auto; height: 50%; margin-bottom: 20px;">
+	  <a href="/list">상품목록</a>
+	  <a href="/login">로그인</a>
+	  <a href="/myPage">마이페이지</a>
+	  <a href="/addAccount">회원가입</a>
+	</div>
 	
-	<img src="/images/testImage.png" width="10%">
 </body>
+<style>
+	div {
+	    display: flex; 
+	    flex-direction: column; 
+	    align-items: center; /* 수평 정렬 */
+	    justify-content: center; /* 수직 정렬 */
+	    height: 200px; /* 필요에 따라 높이 조정 */
+	  }
+
+	  div a {
+	    margin: 10px 0; /* 각 링크 간격 추가 */
+	    text-decoration: none; /* 기본 밑줄 제거 */
+	    color: black; /* 링크 색상 */
+	  }
+</style>
 </html>

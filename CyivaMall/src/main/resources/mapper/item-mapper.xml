@@ -64,7 +64,17 @@
         		OR manufacturer LIKE CONCAT('%', #{t}, '%')
          ORDER  BY price ASC
 	</select>
-	
+	<!-- 제조사 상품 검색 -->
+	<select id="searchItemManu" parameterType="string" resultType="item">
+	    SELECT 	id, 
+           		name,
+           		price,
+           		manufacturer,
+           		exp
+      	  FROM	item
+     	 WHERE 	manufacturer LIKE CONCAT('%', #{t}, '%')
+         ORDER  BY price ASC
+	</select>
 	
 	
 </mapper>

@@ -13,23 +13,31 @@ a{
 }
 	
 .second-color { 
-	background: #c9fdd7; 
+	background: #e8ddc8; 
 }
 
 .third-color { 
-	background: #79d1c3; 
+	background: #e8ddc8; 
 }
 
 .fourth-color { 
-	background: #6892d5; 
+	background: #e8ddc8; 
 }
 
 .header-box{
-	background: #79d1c3; 
+	background: #e8ddc8; 
 	display: inline;
 	margin: 1px;
 }
-
-.linker{
-	
+body{
+	background-color: #e8ddc8;
 }
+
+
+table{background-color: rgb(255, 255, 255);}
+tbody tr:nth-child(2n) {
+		background-color: rgb(255, 255, 255);
+	  }
+	  tbody tr:nth-child(2n-1) {
+		background-color: rgb(255, 251, 217);
+	  }

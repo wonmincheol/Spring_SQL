@@ -51,5 +51,9 @@ public class ItemService {
 		// TODO Auto-generated method stub
 		return itemRepository.getSearchList(t);
 	}
+
+	public List<ItemDTO> getSerachListManu(String t) {
+		return itemRepository.getSearchListManu(t);
+	}
 	
 }

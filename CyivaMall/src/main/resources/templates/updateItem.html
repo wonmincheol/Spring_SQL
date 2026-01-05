@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>상품 수정</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<form th:action="@{/goUpdate/{id}(id=${detailItem.id})}" method="post" name="updateForm">

@@ -14,3 +14,10 @@ const goDelete = () => {
 		location.href = "/goDelete/"+id;
 	}
 }
+
+const goPurchase = () => {
+	const ok = confirm("구매하시겠습니까?");
+	if(ok){
+		location.href = "/goPurchase/"+id;
+	}
+}

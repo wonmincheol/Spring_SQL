@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.demo.dto.ItemDTO;
 import com.example.demo.service.ItemService;
 
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -45,11 +46,26 @@ public class ItemController {
 	
 	//상품 상세정보 가져오기
 	@GetMapping("/{id}") 
-	public String detail(@PathVariable("id") Integer id, Model model) { 
+	public String detail(@PathVariable("id") Integer id, Model model, HttpSession session) { 
 		ItemDTO itemDTO = itemService.detail(id);
 		model.addAttribute("detailItem", itemDTO); 
-		return "detailItem"; 
+		
+		// 권한이 관리자인가? && 조회한 아이템의 제조사가 로그인한 제조사랑 동일한가?
+		if(		session.getAttribute("auth").toString().equalsIgnoreCase("admin") 
+				&& 
+				session.getAttribute("user").toString().equalsIgnoreCase(itemDTO.getManufacturer())) 
+		{
+			//관리자 권한으로 로그인시
+			return "detailItemAdmin";
+		}
+		else {
+			//비 관리자 권한으로 로그인시
+			return "detailItem"; 
+				
+		}
+		
 	}
+	
 	
 	//상품 정보 삭제하기
 	@GetMapping("/goDelete/{id}") 
@@ -67,7 +83,7 @@ public class ItemController {
 	}
 	  
 	//상품 정보 수정하기
-	@PostMapping("/goUpdate/{id}") 
+@PostMapping("/goUpdate/{id}") 
 	public String goUpdate(ItemDTO itemDTO, Model model) {
 	  
 		itemService.goUpdate(itemDTO);//update 요청 및 수행

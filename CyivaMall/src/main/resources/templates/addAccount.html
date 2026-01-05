@@ -2,19 +2,21 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>상품 추가 페이지</title>
+<title>---  회원가입  ---</title>
 <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	<form action="/addItem" method="post" enctype="multipart/form-data">
-			상품명 : <input type="text" name="name"><br>
+	<form action="/addAccount" method="post" enctype="multipart/form-data">
+			Name : <input type="text" name="name"><br>
 			
-			가격 : <input type="text" name="price"><br>
-			제조사 : <input type="text" name="manufacturer"><br>
+			Password : <input type="text" name="password"><br>
+			유형 : <select name="auth">
+					<option value="admin">판매자</option>
+				    <option value="user">소비자</option>
+				  </select>
+			<br>
 			
-			설명 : <input type="text" name="exp"><br>
-
 			<input type="submit" value="저장">
 			
 		</form>

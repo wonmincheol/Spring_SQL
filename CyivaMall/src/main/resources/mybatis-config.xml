@@ -9,6 +9,7 @@
 		<typeAlias type="com.example.demo.controller.IndexController" alias = "IndexController"></typeAlias>
 		<typeAlias type="com.example.demo.dto.ItemDTO" alias = "item"></typeAlias>
 		<typeAlias type="com.example.demo.dto.AccountDTO" alias = "account"></typeAlias>
+		<typeAlias type="com.example.demo.dto.transaction_historyDTO" alias = "transaction_history"></typeAlias>
 	
 	</typeAliases>
 </configuration>

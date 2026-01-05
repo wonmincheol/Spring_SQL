@@ -51,6 +51,11 @@ public class ItemRepository {
 		// TODO Auto-generated method stub
 		return sql.selectList("Item.searchItem",t);
 	}
+
+	public List<ItemDTO> getSearchListManu(String t) {
+		// TODO Auto-generated method stub
+		return sql.selectList("Item.searchItemManu",t);
+	}
 	
 	
 	
